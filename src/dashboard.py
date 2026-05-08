@@ -129,7 +129,7 @@ def build_github_heatmap(ts, threshold=HIGH_RISK_THRESHOLD):
         title=t("risk.heatmap_title"),
         xaxis=dict(side="top", tickfont=dict(size=11)),
         yaxis=dict(tickfont=dict(size=10)),
-        margin=dict(t=70, b=10, l=10, r=10),
+        margin=dict(t=40, b=10, l=10, r=10),
         height=max(200, weeks * 28 + 60),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
