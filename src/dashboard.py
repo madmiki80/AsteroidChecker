@@ -496,7 +496,7 @@ def render_cache():
                 "size_kb": st.column_config.NumberColumn(t("cache.size_kb"), format="%.1f"),
                 "rows": t("cache.rows"),
             },
-            use_container_width=True,
+            width=True,
             hide_index=True,
         )
 
@@ -576,7 +576,7 @@ def render_risk_section(df, key_suffix=""):
     with col_hm:
         fig_hm = build_github_heatmap(ts, threshold=threshold)
         if fig_hm:
-            st.plotly_chart(fig_hm, use_container_width=True)
+            st.plotly_chart(fig_hm, width=True)
 
     with col_ts:
         if not ts.empty:
@@ -607,7 +607,7 @@ def render_risk_section(df, key_suffix=""):
                 height=280,
                 legend=dict(orientation="h", y=1.12),
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width=True)
 
     st.markdown(t("rankings.title"))
     rank_tabs = st.tabs([t("rankings.closest"), t("rankings.highest")])
@@ -631,11 +631,11 @@ def render_risk_section(df, key_suffix=""):
                 margin=dict(t=80, b=10, l=10, r=10),
                 height=320,
             )
-            st.plotly_chart(fig_rank, use_container_width=True)
+            st.plotly_chart(fig_rank, width=True)
 
             tbl = build_closest_table(ranking)
             if tbl is not None:
-                st.dataframe(tbl, use_container_width=True, hide_index=True)
+                st.dataframe(tbl, width=True, hide_index=True)
 
     with rank_tabs[1]:
         risk_rank = highest_risk_ranking(df)
@@ -656,7 +656,7 @@ def render_risk_section(df, key_suffix=""):
                 margin=dict(t=80, b=10, l=10, r=10),
                 height=320,
             )
-            st.plotly_chart(fig_risk_rank, use_container_width=True)
+            st.plotly_chart(fig_risk_rank, width=True)
 
             st.dataframe(
                 risk_rank[["rank", "name", "date", "risk_score", "diameter_avg_m", "velocity_kmh", "miss_distance_km", "is_hazardous"]],
@@ -670,7 +670,7 @@ def render_risk_section(df, key_suffix=""):
                     "miss_distance_km": st.column_config.NumberColumn(t("data.miss_dist"), format=".0f"),
                     "is_hazardous": st.column_config.CheckboxColumn(t("table.col_pho")),
                 },
-                use_container_width=True,
+                width=True,
                 hide_index=True,
             )
 
@@ -692,7 +692,7 @@ def render_charts(df):
         )
         fig_pie.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
         fig_pie.update_traces(textposition="outside", textinfo="label+percent")
-        st.plotly_chart(fig_pie, use_container_width=True)
+        st.plotly_chart(fig_pie, width=True)
 
     with c2:
         risk_counts = df["risk_label"].value_counts().reindex(["NONE", "LOW", "MEDIUM", "HIGH"], fill_value=0)
@@ -706,7 +706,7 @@ def render_charts(df):
             color_discrete_map=colors,
         )
         fig_risk.update_layout(showlegend=False, margin=dict(t=80, b=10, l=10, r=10), height=300)
-        st.plotly_chart(fig_risk, use_container_width=True)
+        st.plotly_chart(fig_risk, width=True)
 
     c3, c4 = st.columns(2)
     with c3:
@@ -727,7 +727,7 @@ def render_charts(df):
             range_color=[0, 1],
         )
         fig_scatter.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=320)
-        st.plotly_chart(fig_scatter, use_container_width=True)
+        st.plotly_chart(fig_scatter, width=True)
 
     with c4:
         fig_dist = px.scatter(
@@ -747,7 +747,7 @@ def render_charts(df):
             range_color=[0, 1],
         )
         fig_dist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=320)
-        st.plotly_chart(fig_dist, use_container_width=True)
+        st.plotly_chart(fig_dist, width=True)
 
     c5, c6 = st.columns(2)
     with c5:
@@ -760,7 +760,7 @@ def render_charts(df):
             color_discrete_sequence=["#1E88E5"],
         )
         fig_hist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
-        st.plotly_chart(fig_hist, use_container_width=True)
+        st.plotly_chart(fig_hist, width=True)
 
     with c6:
         fig_speed_hist = px.histogram(
@@ -772,7 +772,7 @@ def render_charts(df):
             color_discrete_sequence=["#FF7043"],
         )
         fig_speed_hist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
-        st.plotly_chart(fig_speed_hist, use_container_width=True)
+        st.plotly_chart(fig_speed_hist, width=True)
 
     c7, c8 = st.columns(2)
     with c7:
@@ -791,7 +791,7 @@ def render_charts(df):
             margin=dict(t=80, b=80, l=10, r=10),
             height=300,
         )
-        st.plotly_chart(fig_lunar, use_container_width=True)
+        st.plotly_chart(fig_lunar, width=True)
 
     with c8:
         top_diam = df.nlargest(10, "diameter_max_m")
@@ -810,7 +810,7 @@ def render_charts(df):
             margin=dict(t=80, b=80, l=10, r=10),
             height=300,
         )
-        st.plotly_chart(fig_diam, use_container_width=True)
+        st.plotly_chart(fig_diam, width=True)
 
     c9, c10 = st.columns(2)
     with c9:
@@ -828,7 +828,7 @@ def render_charts(df):
             annotation_text=t("risk.threshold_line", t=HIGH_RISK_THRESHOLD),
         )
         fig_risk_dist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
-        st.plotly_chart(fig_risk_dist, use_container_width=True)
+        st.plotly_chart(fig_risk_dist, width=True)
 
     with c10:
         top_speed = df.nlargest(10, "velocity_kmh")
@@ -847,7 +847,7 @@ def render_charts(df):
             margin=dict(t=80, b=80, l=10, r=10),
             height=300,
         )
-        st.plotly_chart(fig_speed, use_container_width=True)
+        st.plotly_chart(fig_speed, width=True)
 
 
 def render_data_table(df, key_suffix="", threshold=HIGH_RISK_THRESHOLD):
@@ -906,7 +906,7 @@ def render_data_table(df, key_suffix="", threshold=HIGH_RISK_THRESHOLD):
     st.dataframe(
         display[existing_cols],
         column_config={k: col_config[k] for k in existing_cols},
-        use_container_width=True,
+        width=True,
         hide_index=True,
         height=400,
     )
@@ -935,7 +935,7 @@ def render_detail(row, threshold=HIGH_RISK_THRESHOLD):
         with cols[0]:
             fig = build_risk_gauge(row["risk_score"], threshold=threshold)
             fig.update_layout(margin=dict(t=10, b=10, l=10, r=10), height=200, paper_bgcolor="rgba(0,0,0,0)")
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width=True)
 
         with cols[1]:
             risk_label = row.get("risk_label", "NONE")
