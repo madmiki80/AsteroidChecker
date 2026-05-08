@@ -1,0 +1,3 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+3653390,(2013 VL),2026-05-08,7.67,17.14,12.4,2026-05-08,68724.81,53024546.12,False,False,Earth,0.1115,NONE
+3719730,(2015 KB57),2026-05-08,92.16,206.08,149.12,2026-05-08,76121.21,21218744.95,False,False,Earth,0.2883,LOW

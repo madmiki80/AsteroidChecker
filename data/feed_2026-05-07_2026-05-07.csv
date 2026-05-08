@@ -1,0 +1,4 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+3143095,(2002 VU114),2026-05-07,73.21,163.7,118.45,2026-05-07,40136.42,18962019.0,False,False,Earth,0.2013,LOW
+3374391,(2007 HW4),2026-05-07,50.65,113.25,81.95,2026-05-07,65934.07,45182093.77,False,False,Earth,0.2289,LOW
+3799712,(2018 DT),2026-05-07,10.11,22.6,16.35,2026-05-07,61353.87,72978230.64,False,False,Earth,0.1147,NONE

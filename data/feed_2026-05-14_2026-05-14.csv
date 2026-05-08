@@ -1,0 +1,5 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+3561033,(2011 GH3),2026-05-14,560.47,1253.26,906.86,2026-05-14,83006.21,24078869.82,False,False,Earth,0.4196,LOW
+3819564,(2018 HW1),2026-05-14,18.39,41.12,29.75,2026-05-14,47212.34,48507253.02,False,False,Earth,0.1254,NONE
+3873149,(2019 SE9),2026-05-14,24.69,55.21,39.95,2026-05-14,19321.0,53158120.04,False,False,Earth,0.0902,NONE
+3893720,(2019 WP4),2026-05-14,34.88,77.99,56.43,2026-05-14,53106.08,35289540.11,False,False,Earth,0.1789,NONE

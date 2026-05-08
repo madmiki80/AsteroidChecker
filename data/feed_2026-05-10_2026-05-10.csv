@@ -1,0 +1,6 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+2326290,326290 Akhenaten (1998 HE3),2026-05-10,114.43,255.88,185.16,2026-05-10,38923.9,11003044.66,True,False,Earth,0.428,LOW
+3713071,(2015 EZ6),2026-05-10,5.06,11.33,8.19,2026-05-10,35183.1,34214466.51,False,False,Earth,0.0304,NONE
+3753135,(2016 JX24),2026-05-10,22.11,49.44,35.77,2026-05-10,61420.24,57251093.82,False,False,Earth,0.1659,NONE
+3789680,(2017 WG15),2026-05-10,116.03,259.44,187.73,2026-05-10,52073.03,74755074.68,False,False,Earth,0.2552,LOW
+54439881,(2024 FT15),2026-05-10,68.04,152.14,110.09,2026-05-10,4979.77,32265446.8,False,False,Earth,0.1563,NONE

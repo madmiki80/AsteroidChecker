@@ -1,0 +1,5 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+3648864,(2013 TT5),2026-05-20,14.61,32.66,23.63,2026-05-20,13356.76,26524715.89,False,False,Earth,0.056,NONE
+3716434,(2015 HC1),2026-05-20,10.11,22.6,16.35,2026-05-20,27170.52,31352306.79,False,False,Earth,0.0464,NONE
+3736659,(2015 XK351),2026-05-20,239.09,534.61,386.85,2026-05-20,48061.5,49720110.77,True,False,Earth,0.4943,LOW
+3893864,(2019 WN6),2026-05-20,18.47,41.31,29.89,2026-05-20,30199.2,71143889.35,False,False,Earth,0.0917,NONE

@@ -1,0 +1,4 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+3263660,(2004 XA45),2026-05-09,167.71,375.01,271.36,2026-05-09,112523.68,68753396.45,False,False,Earth,0.4001,LOW
+3799834,(2018 EW1),2026-05-09,14.61,32.66,23.63,2026-05-09,26419.05,63181204.06,False,False,Earth,0.0689,NONE
+3824065,(2018 JN1),2026-05-09,92.16,206.08,149.12,2026-05-09,49327.12,27056382.41,False,False,Earth,0.2347,LOW

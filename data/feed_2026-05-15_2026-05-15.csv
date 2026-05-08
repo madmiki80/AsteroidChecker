@@ -1,0 +1,5 @@
+id,name,date,diameter_min_m,diameter_max_m,diameter_avg_m,close_approach_date,velocity_kmh,miss_distance_km,is_hazardous,is_high_risk,orbiting_body,risk_score,risk_label
+2467351,467351 (2003 KO2),2026-05-15,225.19,503.55,364.37,2026-05-15,49657.18,33607734.75,True,False,Earth,0.4935,LOW
+3639500,(2013 LB2),2026-05-15,76.66,171.41,124.03,2026-05-15,53495.77,34907547.49,False,False,Earth,0.231,LOW
+3733939,(2015 VE65),2026-05-15,50.65,113.25,81.95,2026-05-15,50992.63,8146554.45,False,False,Earth,0.199,NONE
+3836709,(2018 XC),2026-05-15,19.26,43.06,31.16,2026-05-15,79645.42,73698985.16,False,False,Earth,0.1933,NONE
