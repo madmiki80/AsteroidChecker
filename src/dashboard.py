@@ -26,18 +26,199 @@ client = NeoWsClient()
 
 CUSTOM_CSS = """
 <style>
-.badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
-.badge-high { background: #FF5252; color: #fff; }
-.badge-medium { background: #FFB74D; color: #000; }
-.badge-low { background: #FFF176; color: #000; }
-.badge-none { background: #4CAF50; color: #fff; }
+/* === SOLARBALLS-INSPIRED SPACE THEME === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.stApp {
+    background: linear-gradient(145deg, #070b1a 0%, #0d1b3e 25%, #150a2e 50%, #0a0e27 75%, #070b1a 100%);
+}
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 25% 5%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 5% 45%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1.5px 1.5px at 55% 30%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 70% 15%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 85% 35%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1.5px 1.5px at 15% 60%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 35% 75%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 50% 55%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1.5px 1.5px at 65% 80%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 80% 65%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 90% 50%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1.5px 1.5px at 20% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 45% 85%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 75% 95%, rgba(255,255,255,0.4), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .stApp header { height: 0 !important; }
-.main .block-container { padding-top: 1rem; padding-bottom: 1rem; }
-div[data-testid="stMetricValue"] { font-size: 1.6rem !important; }
-.heatmap-cell { font-size: 0.7rem; }
-h4 { margin-top: 1.5rem !important; margin-bottom: 1rem !important; }
-h5 { margin-top: 1.2rem !important; margin-bottom: 0.8rem !important; }
+.main .block-container { padding-top: 1rem; padding-bottom: 1rem; position: relative; z-index: 1; }
+
+/* === CARDS === */
+div[data-testid="stMetric"],
+div[data-testid="stDataFrame"],
+div[data-testid="stTable"],
+.stPlotlyChart,
+div.stTabs {
+    background: rgba(15,20,50,0.5) !important;
+    border: 1px solid rgba(100,150,255,0.1) !important;
+    border-radius: 14px !important;
+    padding: 0.75rem !important;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.03);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+div[data-testid="stMetric"]:hover,
+.stPlotlyChart:hover {
+    border-color: rgba(100,150,255,0.25) !important;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 0 24px rgba(100,150,255,0.06);
+}
+
+/* === METRICS === */
+div[data-testid="stMetric"] {
+    padding: 1rem 0.75rem !important;
+}
+div[data-testid="stMetricLabel"] {
+    color: #7a8fbf !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.3px;
+}
+div[data-testid="stMetricValue"] {
+    font-size: 1.8rem !important;
+    color: #e8eeff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 30px rgba(100,150,255,0.15);
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3 { font-family: 'Orbitron', sans-serif !important; }
+h3, h4, h5, h6 {
+    color: #d0ddff !important;
+    letter-spacing: 0.5px;
+}
+h3 {
+    border-bottom: 1px solid rgba(100,150,255,0.12);
+    padding-bottom: 10px;
+    margin-top: 0.5rem !important;
+}
+h4 { margin-top: 1.8rem !important; margin-bottom: 0.8rem !important; }
+h5 { margin-top: 1.4rem !important; margin-bottom: 0.6rem !important; }
+.stMarkdown p, .stMarkdown li, .stMarkdown span {
+    color: #b0c4de;
+}
+.stCaption, .stCaption p {
+    color: #5a6f8f !important;
+}
+
+/* === BUTTONS === */
+.stButton button {
+    background: linear-gradient(135deg, rgba(30,60,120,0.6), rgba(50,20,80,0.6)) !important;
+    border: 1px solid rgba(100,150,255,0.2) !important;
+    color: #b8ccff !important;
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s !important;
+    backdrop-filter: blur(4px);
+}
+.stButton button:hover {
+    background: linear-gradient(135deg, rgba(40,80,160,0.7), rgba(70,30,110,0.7)) !important;
+    border-color: rgba(100,150,255,0.4) !important;
+    box-shadow: 0 0 28px rgba(100,150,255,0.12);
+    color: #d0ddff !important;
+}
+
+/* === INPUTS === */
+div[data-testid="stTextInput"] input,
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+div[data-testid="stDateInput"] input {
+    background: rgba(10,15,40,0.7) !important;
+    border: 1px solid rgba(100,150,255,0.12) !important;
+    color: #c8d8ff !important;
+    border-radius: 10px !important;
+    caret-color: #6a8fff;
+}
+div[data-testid="stTextInput"] input:focus {
+    border-color: rgba(100,150,255,0.4) !important;
+    box-shadow: 0 0 16px rgba(100,150,255,0.08);
+}
+
+/* === SELECTBOX DROPDOWN === */
+div[data-baseweb="select"] div[data-baseweb="popover"] {
+    background: rgba(10,15,40,0.95) !important;
+    border: 1px solid rgba(100,150,255,0.15) !important;
+    backdrop-filter: blur(12px);
+}
+
+/* === TABS === */
+div[data-testid="stTabs"] button {
+    color: #7a8fbf !important;
+    font-weight: 500 !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.3s;
+}
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #8ab4ff !important;
+    border-bottom-color: #6a8fff !important;
+}
+
+/* === CHECKBOX / TOGGLE === */
+div[data-testid="stCheckbox"] label span {
+    color: #b0c4de;
+}
+
+/* === SLIDER === */
+div[data-testid="stSlider"] div[data-testid="stTickBar"] {
+    color: #5a6f8f;
+}
+
+/* === BADGES === */
+.badge { display: inline-block; padding: 3px 12px; border-radius: 14px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.badge-high { background: linear-gradient(135deg, #b71c1c, #ff5252); color: #fff; box-shadow: 0 0 16px rgba(255,82,82,0.3); }
+.badge-medium { background: linear-gradient(135deg, #e65100, #ffb74d); color: #000; box-shadow: 0 0 12px rgba(255,183,77,0.2); }
+.badge-low { background: linear-gradient(135deg, #f57f17, #fff176); color: #000; }
+.badge-none { background: linear-gradient(135deg, #1b5e20, #4caf50); color: #fff; }
+
+/* === PLOTLY CHARTS === */
 .stPlotlyChart { margin-top: 0.5rem !important; }
+
+/* === DATA FRAME === */
+div[data-testid="stDataFrame"] div[data-testid="stDataFrame"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* === SPINNER === */
+div[data-testid="stSpinner"] {
+    color: #8ab4ff;
+}
+
+/* === DIVIDER === */
+hr {
+    border-color: rgba(100,150,255,0.08) !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* === SIDEBAR === */
+section[data-testid="stSidebar"] {
+    background: rgba(7,11,26,0.95) !important;
+    border-right: 1px solid rgba(100,150,255,0.08);
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(100,150,255,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(100,150,255,0.35); }
+
+/* === RESPONSIVE === */
 @media (max-width: 640px) {
     .main .block-container { padding-left: 0.5rem; padding-right: 0.5rem; }
 }
@@ -590,7 +771,7 @@ def render_charts(df):
             labels={"velocity_kmh": t("chart.velocity")},
             color_discrete_sequence=["#FF7043"],
         )
-        fig_speed_hist.update_layout(margin=dict(t=40, b=10, l=10, r=10), height=300)
+        fig_speed_hist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
         st.plotly_chart(fig_speed_hist, use_container_width=True)
 
     c7, c8 = st.columns(2)
@@ -607,7 +788,7 @@ def render_charts(df):
         )
         fig_lunar.update_layout(
             xaxis_tickangle=-45,
-            margin=dict(t=40, b=80, l=10, r=10),
+            margin=dict(t=80, b=80, l=10, r=10),
             height=300,
         )
         st.plotly_chart(fig_lunar, use_container_width=True)
@@ -626,7 +807,7 @@ def render_charts(df):
         )
         fig_diam.update_layout(
             xaxis_tickangle=-45,
-            margin=dict(t=40, b=80, l=10, r=10),
+            margin=dict(t=80, b=80, l=10, r=10),
             height=300,
         )
         st.plotly_chart(fig_diam, use_container_width=True)
@@ -646,7 +827,7 @@ def render_charts(df):
             line_dash="dash", line_color="#fff",
             annotation_text=t("risk.threshold_line", t=HIGH_RISK_THRESHOLD),
         )
-        fig_risk_dist.update_layout(margin=dict(t=40, b=10, l=10, r=10), height=300)
+        fig_risk_dist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
         st.plotly_chart(fig_risk_dist, use_container_width=True)
 
     with c10:
@@ -663,7 +844,7 @@ def render_charts(df):
         )
         fig_speed.update_layout(
             xaxis_tickangle=-45,
-            margin=dict(t=40, b=80, l=10, r=10),
+            margin=dict(t=80, b=80, l=10, r=10),
             height=300,
         )
         st.plotly_chart(fig_speed, use_container_width=True)
