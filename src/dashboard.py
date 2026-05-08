@@ -422,7 +422,7 @@ def render_risk_section(df, key_suffix=""):
                 xaxis_title=t("risk.date"),
                 yaxis_title=t("risk.score"),
                 yaxis=dict(range=[0, 1]),
-                margin=dict(t=60, b=10, l=10, r=10),
+                margin=dict(t=80, b=10, l=10, r=10),
                 height=280,
                 legend=dict(orientation="h", y=1.12),
             )
@@ -447,7 +447,7 @@ def render_risk_section(df, key_suffix=""):
             )
             fig_rank.update_traces(textposition="outside", textfont_size=10)
             fig_rank.update_layout(
-                margin=dict(t=40, b=10, l=10, r=10),
+                margin=dict(t=80, b=10, l=10, r=10),
                 height=320,
             )
             st.plotly_chart(fig_rank, use_container_width=True)
@@ -472,7 +472,7 @@ def render_risk_section(df, key_suffix=""):
             )
             fig_risk_rank.update_traces(textposition="outside", textfont_size=10)
             fig_risk_rank.update_layout(
-                margin=dict(t=40, b=10, l=10, r=10),
+                margin=dict(t=80, b=10, l=10, r=10),
                 height=320,
             )
             st.plotly_chart(fig_risk_rank, use_container_width=True)
@@ -509,7 +509,7 @@ def render_charts(df):
             color_discrete_sequence=["#4CAF50", "#FF5252"],
             hole=0.4,
         )
-        fig_pie.update_layout(margin=dict(t=40, b=10, l=10, r=10), height=300)
+        fig_pie.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
         fig_pie.update_traces(textposition="outside", textinfo="label+percent")
         st.plotly_chart(fig_pie, use_container_width=True)
 
@@ -524,7 +524,7 @@ def render_charts(df):
             color=risk_counts.index,
             color_discrete_map=colors,
         )
-        fig_risk.update_layout(showlegend=False, margin=dict(t=40, b=10, l=10, r=10), height=300)
+        fig_risk.update_layout(showlegend=False, margin=dict(t=80, b=10, l=10, r=10), height=300)
         st.plotly_chart(fig_risk, use_container_width=True)
 
     c3, c4 = st.columns(2)
@@ -545,7 +545,7 @@ def render_charts(df):
             color_continuous_scale="RdYlGn_r",
             range_color=[0, 1],
         )
-        fig_scatter.update_layout(margin=dict(t=40, b=10, l=10, r=10), height=320)
+        fig_scatter.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=320)
         st.plotly_chart(fig_scatter, use_container_width=True)
 
     with c4:
@@ -565,7 +565,7 @@ def render_charts(df):
             color_continuous_scale="RdYlGn_r",
             range_color=[0, 1],
         )
-        fig_dist.update_layout(margin=dict(t=40, b=10, l=10, r=10), height=320)
+        fig_dist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=320)
         st.plotly_chart(fig_dist, use_container_width=True)
 
     c5, c6 = st.columns(2)
@@ -578,7 +578,7 @@ def render_charts(df):
             labels={"diameter_avg_m": t("chart.diameter")},
             color_discrete_sequence=["#1E88E5"],
         )
-        fig_hist.update_layout(margin=dict(t=40, b=10, l=10, r=10), height=300)
+        fig_hist.update_layout(margin=dict(t=80, b=10, l=10, r=10), height=300)
         st.plotly_chart(fig_hist, use_container_width=True)
 
     with c6:
