@@ -186,10 +186,9 @@ div[data-testid="stSlider"] div[data-testid="stTickBar"] {
 .badge-none { background: linear-gradient(135deg, #1b5e20, #4caf50); color: #fff; }
 
 /* === PLOTLY CHARTS === */
-.stPlotlyChart { margin-top: 0.5rem !important; overflow: hidden; box-sizing: border-box; }
-.stPlotlyChart .js-plotly-plot,
-.stPlotlyChart .plot-container.plotly { width: 100% !important; }
-.stPlotlyChart .js-plotly-plot svg { width: 100% !important; }
+.stPlotlyChart { margin-top: 0.5rem !important; overflow: hidden; }
+.stPlotlyChart .js-plotly-plot { min-width: 0; max-width: 100%; }
+.stPlotlyChart .plot-container.plotly { min-width: 0; max-width: 100%; }
 
 /* === DATA FRAME === */
 div[data-testid="stDataFrame"] div[data-testid="stDataFrame"] {
