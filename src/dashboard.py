@@ -225,8 +225,33 @@ section[data-testid="stSidebar"] {
 ::-webkit-scrollbar-thumb:hover { background: rgba(100,150,255,0.35); }
 
 /* === RESPONSIVE === */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .main .block-container { padding-left: 0.5rem; padding-right: 0.5rem; }
+    div[data-testid="stMetric"] { padding: 0.6rem 0.4rem !important; }
+    div[data-testid="stMetricValue"] { font-size: 1.2rem !important; }
+    h3 { font-size: 1rem !important; }
+    h4 { font-size: 0.9rem !important; }
+    .stPlotlyChart { padding: 0.4rem !important; }
+    .stPlotlyChart .js-plotly-plot svg { max-width: 100% !important; height: auto !important; }
+    div.stTabs { padding: 0.4rem !important; }
+    div[data-testid="stDataFrame"] { padding: 0.4rem !important; font-size: 0.7rem !important; }
+    .stButton button { font-size: 0.75rem !important; padding: 0.3rem 0.6rem !important; }
+    div[data-testid="stTextInput"] input,
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div { font-size: 0.8rem !important; }
+    section[data-testid="stSidebar"] { width: 100% !important; min-width: 100% !important; }
+}
+
+@media (max-width: 480px) {
+    .main .block-container { padding-left: 0.3rem !important; padding-right: 0.3rem !important; }
+    div.stTabs button { font-size: 0.7rem !important; padding: 0.4rem 0.3rem !important; }
+    .stPlotlyChart { padding: 0.25rem !important; border-radius: 10px !important; }
+    .stPlotlyChart .js-plotly-plot svg { max-width: 100% !important; height: auto !important; }
+    div[data-testid="stMetric"] { padding: 0.4rem 0.3rem !important; }
+    div[data-testid="stMetricValue"] { font-size: 1rem !important; }
+    div[data-testid="stMetricLabel"] { font-size: 0.65rem !important; }
+    h3 { font-size: 0.85rem !important; }
+    div[data-testid="stColumn"] { min-width: 100% !important; }
+    .stApp { background: linear-gradient(160deg, #070b1a 0%, #0d1b3e 30%, #150a2e 60%, #070b1a 100%); }
 }
 </style>
 """
