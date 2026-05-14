@@ -58,9 +58,7 @@ CUSTOM_CSS = """
 }
 
 .stApp header { height: 0 !important; }
-.main .block-container { padding-top: 1rem; padding-bottom: 1rem; position: relative; z-index: 1; min-height: 100vh; }
-.stElementContainer { min-height: 100vh; overflow: hidden; }
-section[data-testid="stMain"] { min-height: 100vh; overflow: hidden; }
+.main .block-container { padding-top: 1rem; padding-bottom: 1rem; position: relative; z-index: 1; }
 
 /* === CARDS === */
 div[data-testid="stMetric"],
